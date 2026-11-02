@@ -764,6 +764,97 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   transform: translateX(3px) !important;
 }
 
+
+
+/* =======================================================
+   DU HERO VIDEO MARQUEE / TICKER BAR (EXACT REFERENCE)
+   ======================================================= */
+.du-hero-marquee-section {
+  width: 100% !important;
+  background: #ffffff !important;
+  border-top: 1px solid #ebdbe8 !important;
+  border-bottom: 2px solid #64285d !important;
+  padding: 10px 0 !important;
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: 20 !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+.du-marquee-container {
+  width: 100% !important;
+  overflow: hidden !important;
+  display: flex !important;
+}
+
+.du-marquee-track {
+  display: flex !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  animation: duMarqueeScroll 38s linear infinite !important;
+  will-change: transform !important;
+}
+
+.du-hero-marquee-section:hover .du-marquee-track {
+  animation-play-state: paused !important;
+}
+
+.du-marquee-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.du-marquee-item {
+  display: inline-block !important;
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  color: #7b1fa2 !important; /* Exact purple tone from user screenshot */
+  text-decoration: none !important;
+  padding: 2px 4px !important;
+  transition: color 0.18s ease, transform 0.18s ease !important;
+  letter-spacing: 0.15px !important;
+}
+
+.du-marquee-item:hover {
+  color: #5c1852 !important;
+  text-decoration: underline !important;
+  transform: translateY(-1px) !important;
+}
+
+.du-marquee-sep {
+  display: inline-block !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #9c27b0 !important;
+  margin: 0 16px !important;
+  opacity: 0.85 !important;
+  user-select: none !important;
+}
+
+@keyframes duMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .du-hero-marquee-section {
+    padding: 8px 0 !important;
+  }
+  .du-marquee-item {
+    font-size: 14px !important;
+  }
+  .du-marquee-sep {
+    margin: 0 12px !important;
+  }
+}
+
 </style>
 
 <style id="global-styles-inline-css">
@@ -3434,6 +3525,53 @@ html, body {
 			</svg>
 		</button>
 	</section>
+
+	<!-- HERO TICKER / MARQUEE BAR (EXACT MATCH TO REFERENCE SCREENSHOT) -->
+	<section class="du-hero-marquee-section" aria-label="DU Announcements & Highlights">
+		<div class="du-marquee-container">
+			<div class="du-marquee-track">
+				<!-- Ticker Content Set 1 -->
+				<div class="du-marquee-group">
+					<a href="https://exam.du.ac.in/" target="_blank" rel="noopener noreferrer" class="du-marquee-item">103rd Annual Convocation</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=anti-ragging" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Anti-Ragging</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.youtube.com/@YeDesHaiMera" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Yogesh Singh@YeDesHaiMera</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=highlights" target="_blank" rel="noopener noreferrer" class="du-marquee-item">DU Highlights 2025</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=du-naac" target="_blank" rel="noopener noreferrer" class="du-marquee-item">NAAC A++</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://admission.uod.ac.in/" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Admissions 2026-27</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://ioe.du.ac.in/" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Institution of Eminence (IoE)</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=viksit-bharat" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Viksit Bharat@2047</a>
+					<span class="du-marquee-sep">|</span>
+				</div>
+				<!-- Ticker Content Set 2 (for seamless endless loop) -->
+				<div class="du-marquee-group" aria-hidden="true">
+					<a href="https://exam.du.ac.in/" target="_blank" rel="noopener noreferrer" class="du-marquee-item">103rd Annual Convocation</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=anti-ragging" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Anti-Ragging</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.youtube.com/@YeDesHaiMera" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Yogesh Singh@YeDesHaiMera</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=highlights" target="_blank" rel="noopener noreferrer" class="du-marquee-item">DU Highlights 2025</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=du-naac" target="_blank" rel="noopener noreferrer" class="du-marquee-item">NAAC A++</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://admission.uod.ac.in/" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Admissions 2026-27</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://ioe.du.ac.in/" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Institution of Eminence (IoE)</a>
+					<span class="du-marquee-sep">|</span>
+					<a href="https://www.du.ac.in/index.php?page=viksit-bharat" target="_blank" rel="noopener noreferrer" class="du-marquee-item">Viksit Bharat@2047</a>
+					<span class="du-marquee-sep">|</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 
 
