@@ -1029,6 +1029,284 @@ nav.social,
     display: none !important;
   }
 }
+
+
+/* =======================================================
+   USF-STYLE HEADER GRADIENT & CINEMATIC VIDEO HERO SECTION
+   ======================================================= */
+.du-main-navbar {
+  background: linear-gradient(90deg, #3d1437 0%, #5d2256 30%, #6e2a66 60%, #4a1843 100%) !important;
+  border-bottom: 3.5px solid #d4af37 !important; /* USF signature gold accent border */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18) !important;
+}
+
+.du-main-navbar.sticky {
+  background: linear-gradient(90deg, rgba(61, 20, 55, 0.96) 0%, rgba(93, 34, 86, 0.96) 50%, rgba(74, 24, 67, 0.96) 100%) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-bottom: 3.5px solid #d4af37 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+.du-nav-link:hover {
+  background: rgba(212, 175, 55, 0.16) !important;
+  color: #ffd700 !important;
+}
+
+.du-top-utility-bar {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7fa 100%) !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.du-middle-brand-bar {
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfd 100%) !important;
+}
+
+/* USF-STYLE CINEMATIC VIDEO HERO SECTION */
+.usf-hero-section {
+  position: relative;
+  width: 100%;
+  height: 74vh;
+  min-height: 520px;
+  max-height: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #1a0818;
+}
+
+.usf-hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.usf-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: contrast(1.05) brightness(0.92);
+}
+
+/* USF-Style Signature Gradient Tint Overlay */
+.usf-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg, 
+    rgba(35, 10, 32, 0.82) 0%, 
+    rgba(70, 22, 65, 0.52) 50%, 
+    rgba(15, 5, 16, 0.86) 100%
+  );
+  z-index: 2;
+  backdrop-filter: blur(0.5px);
+}
+
+.usf-hero-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.usf-hero-content {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.usf-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ffd700;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.usf-hero-badge .badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffd700;
+  box-shadow: 0 0 10px #ffd700;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.usf-hero-title {
+  color: #ffffff;
+  font-family: 'Cinzel', serif, 'Open Sans', sans-serif;
+  font-size: clamp(34px, 4.8vw, 56px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin: 0 0 18px 0;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
+}
+
+.usf-hero-subtitle {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 32px auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.usf-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.usf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none !important;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.usf-btn-primary {
+  background: #d4af37;
+  color: #2b0f27 !important;
+  border: 2px solid #d4af37;
+}
+
+.usf-btn-primary:hover {
+  background: #f1c40f;
+  border-color: #f1c40f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+.usf-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.usf-btn-secondary:hover {
+  background: #ffffff;
+  color: #4e1d48 !important;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Scroll Down Prompt (USF Style) */
+.usf-scroll-indicator {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.usf-scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+}
+
+.scroll-mouse {
+  width: 20px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 6px;
+  background: #ffd700;
+  border-radius: 2px;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 1.6s infinite ease-in-out;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 12px); opacity: 0; }
+}
+
+@media only screen and (max-width: 768px) {
+  .usf-hero-section {
+    height: 65vh;
+    min-height: 440px;
+  }
+  .usf-hero-title {
+    font-size: 28px;
+  }
+  .usf-hero-subtitle {
+    font-size: 14.5px;
+  }
+  .usf-btn {
+    padding: 11px 22px;
+    font-size: 13.5px;
+  }
+  .usf-scroll-indicator {
+    display: none;
+  }
+}
+
 </style>
 
 </head>
@@ -2089,6 +2367,48 @@ nav.social,
 	</div>
 
 	<main class="site-main">
+
+
+	
+	<!-- USF-STYLE CINEMATIC VIDEO HERO SECTION -->
+	<section class="usf-hero-section" id="usfHeroSection">
+		<div class="usf-hero-video-wrapper">
+			<video autoplay muted loop playsinline id="usfHeroVideo" class="usf-hero-video" preload="auto">
+				<source src="assets/hero-video.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<!-- USF-Style Signature Gradient Tint Overlay -->
+			<div class="usf-hero-overlay"></div>
+		</div>
+
+		<!-- Hero Content -->
+		<div class="container usf-hero-container">
+			<div class="usf-hero-content">
+				<div class="usf-hero-badge">
+					<span class="badge-dot"></span>
+					<span>UNIVERSITY OF DELHI • ESTD. 1922</span>
+				</div>
+				<h1 class="usf-hero-title">Empowering Minds, Inspiring Generations</h1>
+				<p class="usf-hero-subtitle">A premier institution of academic distinction and global research, fostering innovation, leadership, and public service for over a century.</p>
+				<div class="usf-hero-actions">
+					<a href="https://admission.uod.ac.in/" target="_blank" class="usf-btn usf-btn-primary">
+						Admissions 2026–27 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+					</a>
+					<a href="https://www.du.ac.in/index.php?page=about-du" target="_blank" class="usf-btn usf-btn-secondary">
+						Explore DU <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scroll Down Indicator -->
+		<a href="#heroCarousel" class="usf-scroll-indicator" title="Scroll to Highlights & Notices">
+			<span class="scroll-text">EXPLORE NOTICES & HIGHLIGHTS</span>
+			<div class="scroll-mouse">
+				<div class="scroll-wheel"></div>
+			</div>
+		</a>
+	</section>
 
 
 	<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="hover">
@@ -5571,6 +5891,32 @@ document.addEventListener("DOMContentLoaded", function () {
     initDUCarousel();
   }
 })();</script>
+
+
+<script>
+// USF Hero Video Smooth Playback Rate Controller (Slow Cinematic Motion)
+(function() {
+  function setupHeroVideo() {
+    var v = document.getElementById("usfHeroVideo");
+    if (v) {
+      v.playbackRate = 0.65; // Slow down video for majestic, cinematic feel
+      v.addEventListener("play", function() {
+        v.playbackRate = 0.65;
+      });
+      // Try playing if paused
+      if (v.paused) {
+        v.play().catch(function() {});
+      }
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupHeroVideo);
+  } else {
+    setupHeroVideo();
+  }
+})();
+</script>
 
 </body>
 
