@@ -193,6 +193,148 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   }
 }
 
+
+/* =======================================================
+   DU CAROUSEL BOTTOM PURPLE CAPTION BAR (MATCHING SCREENSHOT)
+   ======================================================= */
+.hero-carousel {
+  position: relative !important;
+  overflow: hidden;
+}
+
+.du-carousel-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(94, 34, 84, 0.88);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 10px 0;
+  z-index: 25;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.22);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.du-caption-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+}
+
+.du-caption-headline {
+  flex: 1;
+  min-width: 0;
+}
+
+.du-caption-link {
+  color: #ffffff !important;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border-bottom: 1.5px dotted rgba(255, 255, 255, 0.9);
+  padding-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  line-height: 1.35;
+  letter-spacing: 0.15px;
+}
+
+.du-caption-link:hover {
+  color: #fce7f3 !important;
+  border-bottom-style: solid;
+}
+
+.du-caption-ext-icon {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+/* Dashes Carousel Indicators */
+.du-caption-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.du-carousel-dashes {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 7px;
+}
+
+.du-carousel-dashes li {
+  width: 28px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.du-carousel-dashes li.active {
+  background-color: #ffffff;
+  width: 44px;
+}
+
+/* Circular Info Badge (i) */
+.du-caption-info {
+  flex-shrink: 0;
+}
+
+.du-info-circle-btn {
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.du-info-circle-btn span {
+  color: var(--du-purple);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.du-info-circle-btn:hover {
+  background: #fce7f3;
+  transform: scale(1.08);
+}
+
+@media only screen and (max-width: 900px) {
+  .du-caption-link {
+    font-size: 13px !important;
+  }
+  .du-carousel-dashes li {
+    width: 20px;
+  }
+  .du-carousel-dashes li.active {
+    width: 30px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .du-caption-indicators {
+    display: none !important;
+  }
+}
+
 </style>
 
 <style id="global-styles-inline-css">
@@ -1837,50 +1979,51 @@ nav.social,
 	<main class="site-main">
 
 
-	<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+	<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="hover">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<a href="https://applications.bennett.edu.in/bu" target="_blank" rel="noopener noreferrer" title="Admissions Open" class="hero-slide__link">
+				<a href="https://events.du.ac.in/Events/Register?eid=OeG26WmUW_fkB_RxWMG2NI1os3xwcO5bAeuHq3KQ9Sw" target="_blank" rel="noopener noreferrer" title="Cyber सतर्कता 1.0 - University of Delhi" class="hero-slide__link">
 					<picture class="hero-slide__media">
-						<img src="assets/hero-carousel/1.png" class="d-block w-100" alt="Bennett University Admission" title="Admissions Open" loading="eager" fetchpriority="high" decoding="async">
+						<img src="assets/hero-carousel/1.png" class="d-block w-100" alt="Cyber सतर्कता 1.0 - University of Delhi" title="Cyber सतर्कता 1.0" loading="eager" fetchpriority="high" decoding="async">
 					</picture>
 				</a>
 				<div class="hero-slide__overlay"></div>
 			</div>
 			<div class="carousel-item">
-				<a href="https://applications.bennett.edu.in/bu" target="_blank" rel="noopener noreferrer" title="Bennett Hatchery Space Tech" class="hero-slide__link">
+				<a href="https://phd.uod.ac.in/" target="_blank" rel="noopener noreferrer" title="Ph.D. Admissions & Interview Schedule 2026-27" class="hero-slide__link">
 					<picture class="hero-slide__media">
-						<img src="assets/hero-carousel/2.png" class="d-block w-100" alt="Bennett Space Tech" title="Bennett Hatchery Space Tech" loading="lazy" fetchpriority="auto" decoding="async">
+						<img src="assets/hero-carousel/2.png" class="d-block w-100" alt="DU Ph.D. Admissions 2026" title="Ph.D. Admissions" loading="lazy" fetchpriority="auto" decoding="async">
 					</picture>
 				</a>
 				<div class="hero-slide__overlay"></div>
 			</div>
 			<div class="carousel-item">
-				<a href="https://applications.bennett.edu.in/bu" target="_blank" rel="noopener noreferrer" title="NVIDIA AI & Tech" class="hero-slide__link">
+				<a href="https://www.du.ac.in/index.php?page=notifications" target="_blank" rel="noopener noreferrer" title="Cyber Security Awareness Month" class="hero-slide__link">
 					<picture class="hero-slide__media">
-						<img src="assets/hero-carousel/3.png" class="d-block w-100" alt="NVIDIA Bennett" title="NVIDIA Bennett" loading="lazy" fetchpriority="auto" decoding="async">
+						<img src="assets/hero-carousel/3.png" class="d-block w-100" alt="DU Cyber Awareness Month" title="DU Cyber Security Month" loading="lazy" fetchpriority="auto" decoding="async">
 					</picture>
 				</a>
 				<div class="hero-slide__overlay"></div>
 			</div>
 			<div class="carousel-item">
-				<a href="https://applications.bennett.edu.in/bu" target="_blank" rel="noopener noreferrer" title="Leading Campus & Academics" class="hero-slide__link">
+				<a href="https://dsw.du.ac.in/" target="_blank" rel="noopener noreferrer" title="Financial Support Scheme (FSS) 2026-27" class="hero-slide__link">
 					<picture class="hero-slide__media">
-						<img src="assets/hero-carousel/4.png" class="d-block w-100" alt="Bennett Campus" title="Bennett Campus" loading="lazy" fetchpriority="auto" decoding="async">
+						<img src="assets/hero-carousel/4.png" class="d-block w-100" alt="DU Financial Support Scheme" title="Financial Support Scheme" loading="lazy" fetchpriority="auto" decoding="async">
 					</picture>
 				</a>
 				<div class="hero-slide__overlay"></div>
 			</div>
 			<div class="carousel-item">
-				<a href="https://applications.bennett.edu.in/bu" target="_blank" rel="noopener noreferrer" title="Placements & Excellence" class="hero-slide__link">
+				<a href="https://exam.du.ac.in/" target="_blank" rel="noopener noreferrer" title="Preparations for the 103rd Annual Convocation" class="hero-slide__link">
 					<picture class="hero-slide__media">
-						<img src="assets/hero-carousel/5.png" class="d-block w-100" alt="Bennett Placements" title="Bennett Placements" loading="lazy" fetchpriority="auto" decoding="async">
+						<img src="assets/hero-carousel/5.png" class="d-block w-100" alt="DU 103rd Annual Convocation" title="103rd Annual Convocation" loading="lazy" fetchpriority="auto" decoding="async">
 					</picture>
 				</a>
 				<div class="hero-slide__overlay"></div>
 			</div>
 		</div>
 
+		<!-- Left & Right Arrow Controls -->
 		<a class="hero-carousel__arrow hero-carousel__arrow--prev" href="#heroCarousel" role="button" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon"></span>
 		</a>
@@ -1888,13 +2031,37 @@ nav.social,
 			<span class="carousel-control-next-icon"></span>
 		</a>
 
-		<ol class="carousel-indicators hero-carousel__dots">
-			<li data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></li>
-			<li data-bs-target="#heroCarousel" data-bs-slide-to="1"></li>
-			<li data-bs-target="#heroCarousel" data-bs-slide-to="2"></li>
-			<li data-bs-target="#heroCarousel" data-bs-slide-to="3"></li>
-			<li data-bs-target="#heroCarousel" data-bs-slide-to="4"></li>
-		</ol>
+		<!-- EXACT DU BOTTOM PURPLE CAPTION BAR FROM SCREENSHOT -->
+		<div class="du-carousel-caption-bar">
+			<div class="container-fluid du-header-container">
+				<div class="du-caption-bar-inner">
+					<!-- Headline with Link -->
+					<div class="du-caption-headline">
+						<a href="https://events.du.ac.in/Events/Register?eid=OeG26WmUW_fkB_RxWMG2NI1os3xwcO5bAeuHq3KQ9Sw" target="_blank" class="du-caption-link" id="duCaptionTitle">
+							‘Cyber सतर्कता 1.0’ to Promote Cybersecurity Awareness and Digital Safety (October 30, 2026) <svg class="du-caption-ext-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+						</a>
+					</div>
+
+					<!-- Dashes Indicators in Center -->
+					<div class="du-caption-indicators">
+						<ol class="du-carousel-dashes">
+							<li data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#heroCarousel" data-bs-slide-to="1"></li>
+							<li data-bs-target="#heroCarousel" data-bs-slide-to="2"></li>
+							<li data-bs-target="#heroCarousel" data-bs-slide-to="3"></li>
+							<li data-bs-target="#heroCarousel" data-bs-slide-to="4"></li>
+						</ol>
+					</div>
+
+					<!-- Info Circle on Right -->
+					<div class="du-caption-info">
+						<a href="https://www.du.ac.in/index.php?page=notifications" target="_blank" class="du-info-circle-btn" title="View DU Notifications">
+							<span>i</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 <!-- <section class="admission-banner py-4">
@@ -5123,6 +5290,60 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         navbar.classList.remove("sticky");
       }
+    });
+  }
+})();
+</script>
+
+
+<script>
+// Dynamic DU Carousel Headline & URL Synchronization
+(function() {
+  var duSlides = [
+    {
+      title: "‘Cyber सतर्कता 1.0’ to Promote Cybersecurity Awareness and Digital Safety (October 30, 2026)",
+      url: "https://events.du.ac.in/Events/Register?eid=OeG26WmUW_fkB_RxWMG2NI1os3xwcO5bAeuHq3KQ9Sw"
+    },
+    {
+      title: "Admissions Open: Ph.D. Programs Registration and Interview Schedule (2026–27)",
+      url: "https://phd.uod.ac.in/"
+    },
+    {
+      title: "University of Delhi Observes Cyber Security Awareness Month Across Colleges and Departments",
+      url: "https://www.du.ac.in/index.php?page=notifications"
+    },
+    {
+      title: "Financial Support Scheme (FSS) 2026–27 for Enrolled Students of University of Delhi",
+      url: "https://dsw.du.ac.in/"
+    },
+    {
+      title: "Preparations Underway for the 103rd Annual Convocation of University of Delhi",
+      url: "https://exam.du.ac.in/"
+    }
+  ];
+
+  var heroCarousel = document.getElementById("heroCarousel");
+  if (heroCarousel) {
+    heroCarousel.addEventListener("slide.bs.carousel", function(e) {
+      var nextIdx = e.to;
+      var slideData = duSlides[nextIdx];
+      if (slideData) {
+        var captionLink = document.getElementById("duCaptionTitle");
+        if (captionLink) {
+          captionLink.href = slideData.url;
+          captionLink.innerHTML = slideData.title + ' <svg class="du-caption-ext-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>';
+        }
+      }
+
+      // Update dashes indicators
+      var dashes = document.querySelectorAll(".du-carousel-dashes li");
+      dashes.forEach(function(dash, idx) {
+        if (idx === nextIdx) {
+          dash.classList.add("active");
+        } else {
+          dash.classList.remove("active");
+        }
+      });
     });
   }
 })();
