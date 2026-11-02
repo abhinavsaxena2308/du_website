@@ -1091,6 +1091,632 @@ body.home {
 
 </style>
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style id="usf-exact-styles">
+
+/* =======================================================
+   USF EXACT TRANSPARENT OVERLAY HEADER & HERO STYLING
+   ======================================================= */
+:root {
+  --usf-du-purple: #5c1852;
+  --usf-du-gold: #d4af37;
+}
+
+/* ZERO TOP GAP & FULL BLEED RESET */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+body.home {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  float: none !important;
+  clear: both !important;
+}
+
+.site-main {
+  clear: both !important;
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* HEADER: Transparent, Overlaid directly onto the video */
+.usf-exact-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(
+    180deg, 
+    rgba(18, 4, 16, 0.94) 0%, 
+    rgba(35, 7, 32, 0.76) 50%, 
+    rgba(45, 9, 40, 0.35) 75%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 16px 0 32px 0;
+  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usf-exact-header.scrolled {
+  position: fixed;
+  background: rgba(35, 8, 32, 0.97) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 0 14px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  border-bottom: 2.5px solid rgba(212, 175, 55, 0.7);
+}
+
+.usf-header-container {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: 0 36px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Brand Column (Left) */
+.usf-brand-col {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.usf-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.usf-white-brand-logo {
+  height: 56px;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+  transition: transform 0.25s ease;
+}
+
+.usf-white-brand-logo:hover {
+  transform: scale(1.02);
+}
+
+.usf-seal-divider {
+  width: 1.5px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.usf-anniversary-seal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.usf-anniversary-seal .seal-number {
+  font-family: 'Oswald', 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.usf-anniversary-seal .seal-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 1.2px;
+  margin-top: 2px;
+}
+
+/* Nav Column (Right: Tier 1 + Tier 2) */
+.usf-nav-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex: 1;
+}
+
+/* Tier 1 Utility Links */
+.usf-tier1-bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.usf-dropdown-item {
+  position: relative;
+}
+
+.usf-tier1-btn,
+.usf-tier1-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  padding: 2px 0;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.usf-tier1-btn:hover,
+.usf-tier1-link:hover {
+  color: #ffd700;
+}
+
+.usf-caret {
+  width: 9px;
+  height: 6px;
+  opacity: 0.85;
+  transition: transform 0.2s ease;
+}
+
+.usf-dropdown-item:hover .usf-caret,
+.usf-has-sub:hover .usf-caret {
+  transform: rotate(180deg);
+}
+
+/* Popover Menu for Tier 1 */
+.usf-popover-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 220px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  padding: 8px 0;
+  margin-top: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+.usf-dropdown-item:hover .usf-popover-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.usf-popover-menu a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.usf-popover-menu a:hover {
+  background: #f8f0f6;
+  color: var(--usf-du-purple);
+  padding-left: 20px;
+}
+
+/* Search Trigger */
+.usf-search-trigger {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.usf-search-trigger:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* MyDU Button */
+.usf-mydu-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+
+.usf-mydu-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Apply CTA Button */
+.usf-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  color: #401037 !important;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.usf-apply-btn:hover {
+  background: #ffd700;
+  color: #2b0824 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.35);
+}
+
+.usf-apply-arrow {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Tier 2 Main Navigation */
+.usf-tier2-nav {
+  width: 100%;
+}
+
+.usf-tier2-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.usf-menu-item {
+  position: relative;
+}
+
+.usf-tier2-link {
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+  letter-spacing: -0.1px;
+}
+
+.usf-tier2-link:hover {
+  color: #ffd700 !important;
+}
+
+/* Mega Dropdown for Tier 2 */
+.usf-mega-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 420px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.26);
+  padding: 20px 24px;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.22s ease;
+  z-index: 100;
+  display: flex;
+  gap: 24px;
+}
+
+.usf-menu-item:hover .usf-mega-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.usf-mega-col {
+  flex: 1;
+}
+
+.usf-mega-col h4 {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--usf-du-purple);
+  border-bottom: 2px solid #f1e4ef;
+  padding-bottom: 5px;
+  margin: 0 0 8px 0;
+}
+
+.usf-mega-col a {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: all 0.15s ease;
+}
+
+.usf-mega-col a:hover {
+  color: var(--usf-du-purple);
+  padding-left: 6px;
+  font-weight: 600;
+}
+
+/* Search Drawer Overlay */
+.usf-search-drawer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(30, 6, 28, 0.98);
+  padding: 20px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: none;
+}
+
+.usf-search-drawer.open {
+  display: block;
+}
+
+.usf-search-box-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.usf-search-box-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.usf-search-drawer-input {
+  flex: 1;
+  background: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 18px;
+  font-size: 16px;
+  color: #333333;
+  outline: none;
+}
+
+.usf-search-drawer-submit {
+  background: var(--usf-du-gold);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2b0824;
+  cursor: pointer;
+}
+
+.usf-search-drawer-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 8px;
+}
+
+/* =======================================================
+   CINEMATIC FULL-BLEED VIDEO HERO SECTION
+   ======================================================= */
+.usf-hero-section {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+  min-height: 600px;
+  max-height: 860px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #120311;
+}
+
+.usf-hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.usf-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: contrast(1.05) brightness(0.92);
+}
+
+/* Exact Reference Gradient Overlay */
+.usf-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(14, 3, 13, 0.7) 0%, 
+    rgba(22, 5, 20, 0.3) 35%, 
+    rgba(22, 5, 20, 0.45) 70%, 
+    rgba(14, 3, 13, 0.85) 100%
+  );
+  z-index: 2;
+}
+
+/* Center Content (Exact Match to Screenshot) */
+.usf-hero-center-box {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 960px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+}
+
+.usf-bold-headline {
+  font-family: 'Montserrat', 'Oswald', sans-serif !important;
+  font-size: clamp(44px, 6.2vw, 76px) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.05 !important;
+  margin: 0 0 14px 0 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75) !important;
+}
+
+.usf-bold-subhead {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: clamp(17px, 1.9vw, 22px) !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+  max-width: 780px !important;
+  margin: 0 auto 20px auto !important;
+  line-height: 1.45 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65) !important;
+}
+
+.usf-bold-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-decoration: underline !important;
+  text-underline-offset: 6px !important;
+  text-decoration-thickness: 2px !important;
+  display: inline-block !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.usf-bold-cta:hover {
+  color: #ffd700 !important;
+  transform: translateX(4px);
+}
+
+/* Bottom Right Video Pause / Play Button */
+.usf-video-toggle-btn {
+  position: absolute;
+  bottom: 34px;
+  right: 40px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2.2px solid rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.usf-video-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1100px) {
+  .usf-header-container {
+    padding: 0 20px;
+  }
+  .usf-tier2-list {
+    gap: 16px;
+  }
+  .usf-tier2-link {
+    font-size: 13.5px;
+  }
+  .usf-bold-headline {
+    font-size: 42px !important;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .usf-tier2-nav {
+    display: none;
+  }
+  .usf-exact-header {
+    padding: 12px 0 20px 0;
+  }
+  .usf-bold-headline {
+    font-size: 34px !important;
+  }
+  .usf-bold-subhead {
+    font-size: 15px !important;
+  }
+  .usf-video-toggle-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+</style>
 </head>
 <style>
 	.honeypot {
@@ -1666,454 +2292,171 @@ body.home {
 		<!-- Floating Social / Helpdesk Icons (From existing design) -->
 		
 
-		<header class="du-exact-header">
-			<!-- TOP BAR: Institution of Eminence & Utilities -->
-			<div class="du-top-utility-bar">
-				<div class="container-fluid du-header-container">
-					<div class="du-top-bar-inner">
-						<div class="du-ioe-brand">
-							<a href="https://ioe.du.ac.in/" target="_blank">Institution of Eminence</a>
-						</div>
-						<div class="du-top-links-group">
-							<a href="https://udhmodya.org/" target="_blank" class="du-util-link">Udhmodya Foundation <svg class="du-ext-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px; opacity:0.85;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-							<a href="https://uodfoundation.du.ac.in/" target="_blank" class="du-util-link">UoD Foundation <svg class="du-ext-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px; opacity:0.85;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-							<a href="https://samarth.edu.in/" target="_blank" class="du-util-link">Samarth@DU <svg class="du-ext-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px; opacity:0.85;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-							<a href="https://www.du.ac.in/index.php?page=student-grievance" target="_blank" class="du-util-link">Student Grievance Redressal <svg class="du-ext-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px; opacity:0.85;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-							<a href="https://www.du.ac.in/index.php?page=kulgeet" target="_blank" class="du-util-link">डीयू कुलगीत <svg class="du-ext-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px; opacity:0.85;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-							<a href="https://www.du.ac.in/index.php?page=du-naac" target="_blank" class="du-util-link">NAAC <svg class="du-ext-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px; opacity:0.85;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-							
-							<div class="du-font-resizer">
-								<button type="button" id="font-increase" title="Increase text size">+A</button>
-								<button type="button" id="font-normal" title="Normal text size">A</button>
-								<button type="button" id="font-decrease" title="Decrease text size">A-</button>
-							</div>
-
-							<div class="du-lang-toggle">
-								<a href="javascript:void(0);" class="active-lang">English</a>
-								<span class="lang-divider">|</span>
-								<a href="javascript:void(0);">हिंदी</a>
-							</div>
-
-							<a href="https://www.du.ac.in/" class="du-home-link" title="Home"><svg class="du-home-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-right:3px;"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home</a>
-						</div>
+		
+		<!-- USF-STYLE TRANSPARENT OVERLAY HEADER (MATCHING REFERENCE SCREENSHOT) -->
+		<header class="usf-exact-header" id="usfHeader">
+			<div class="usf-header-container">
+				<!-- Brand Column (Logo + Anniversary Seal) -->
+				<div class="usf-brand-col">
+					<a href="https://www.du.ac.in/" class="usf-logo-link" title="University of Delhi - दिल्ली विश्वविद्यालय">
+						<img src="assets/logo.png" alt="University of Delhi" class="usf-white-brand-logo">
+					</a>
+					<div class="usf-seal-divider"></div>
+					<div class="usf-anniversary-seal">
+						<span class="seal-number">100</span>
+						<span class="seal-label">EST. 1922</span>
 					</div>
 				</div>
-			</div>
 
-			<!-- MIDDLE BAR: Logo & Search Query -->
-			<div class="du-middle-brand-bar">
-				<div class="container-fluid du-header-container">
-					<div class="du-middle-bar-inner">
-						<div class="du-logo-area">
-							<a href="https://www.du.ac.in/" title="University of Delhi - दिल्ली विश्वविद्यालय">
-								<img src="assets/logo.png" alt="University of Delhi" class="du-header-main-logo">
-							</a>
+				<!-- Navigation & Utilities Column -->
+				<div class="usf-nav-col">
+					<!-- Tier 1: Utility Links & Tools -->
+					<div class="usf-tier1-bar">
+						<div class="usf-dropdown-item">
+							<button type="button" class="usf-tier1-btn">Info For <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></button>
+							<div class="usf-popover-menu">
+								<a href="https://admission.uod.ac.in/">Future Students</a>
+								<a href="https://www.du.ac.in/index.php?page=student-grievance">Current Students</a>
+								<a href="https://workwithus.du.ac.in/">Faculty & Staff</a>
+								<a href="https://alumni.du.ac.in/">Alumni & Donors</a>
+								<a href="https://udhmodya.org/">Parents & Families</a>
+							</div>
 						</div>
 
-						<div class="du-search-area">
-							<form action="https://www.du.ac.in/index.php" method="get" class="du-header-search-form">
-								<input type="text" name="s" placeholder="Enter your Query" class="du-header-search-input" required autocomplete="off">
-								<button type="submit" class="du-header-search-btn">Search</button>
-							</form>
-
-							<button class="menu-toggle du-mobile-toggle" id="menuToggle" aria-label="Open navigation menu">
-								<span></span>
-								<span></span>
-								<span></span>
-							</button>
+						<div class="usf-dropdown-item">
+							<button type="button" class="usf-tier1-btn">Quick Links <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></button>
+							<div class="usf-popover-menu">
+								<a href="https://ioe.du.ac.in/">Institution of Eminence</a>
+								<a href="https://exam.du.ac.in/">Examinations & Results</a>
+								<a href="https://crl.du.ac.in/">DU Central Library</a>
+								<a href="https://www.du.ac.in/index.php?page=tenders">Tenders</a>
+								<a href="https://www.du.ac.in/index.php?page=kulgeet">डीयू कुलगीत</a>
+								<a href="https://www.du.ac.in/index.php?page=du-naac">NAAC Accreditation</a>
+							</div>
 						</div>
+
+						<a href="https://uodfoundation.du.ac.in/" target="_blank" class="usf-tier1-link">Give</a>
+
+						<!-- Search Trigger -->
+						<button type="button" class="usf-search-trigger" id="usfSearchOpenBtn" title="Search DU Query">
+							<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+						</button>
+
+						<!-- MyDU Portal Button -->
+						<a href="https://samarth.edu.in/" target="_blank" class="usf-mydu-btn" title="Samarth@DU Portal">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+							<span>MyDU</span>
+						</a>
+
+						<!-- Apply CTA Button (Exact Reference Pill) -->
+						<a href="https://admission.uod.ac.in/" target="_blank" class="usf-apply-btn">
+							<span>Apply</span> <span class="usf-apply-arrow">&rsaquo;</span>
+						</a>
 					</div>
-				</div>
-			</div>
 
-			<!-- MAIN NAVBAR: Signature Purple Bar (ALL ITEMS IN ONE SINGLE LINE) -->
-			<nav class="du-main-navbar" id="duMainNavbar">
-				<div class="container-fluid du-header-container">
-					<div class="du-navbar-inner">
-						<ul class="du-nav-left-list">
-							<li class="du-nav-item"><a href="https://www.du.ac.in/" class="du-nav-link home-btn">Home</a></li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=about-du" class="du-nav-link">About DU <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>University Profile</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=about-du">Overview</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=vision-and-mission">Vision & Mission</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=vice-chancellors-desk">VC's Messages & Videos</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=du-ranking">DU Ranking & NIRF</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=du-naac">DU - NAAC Accreditation</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=social-outreach">Social Outreach</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Governance & Planning</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=acts-statutes-ordinances">Acts, Statutes & Ordinances</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=institutional-development-plan">Institutional Development Plan</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=strategic-plan-2024-2047">Strategic Plan (2024–2047)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=annual-reports">Annual Reports</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=university-calendar">University Calendar</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=best-practices">Best Practices</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Heritage & Media</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=du-e-journals">DU e-Journals</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=university-handbooks">University Handbooks</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=du-gallery">DU Gallery</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=du-memoir">DU Memoir</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=du-archives">DU Archives & Centenary</a></li>
-											</ul>
-										</div>
+					<!-- Tier 2: Main Navigation Links -->
+					<nav class="usf-tier2-nav">
+						<ul class="usf-tier2-list">
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=about-du" class="usf-tier2-link">About DU <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown">
+									<div class="usf-mega-col">
+										<h4>Profile & Governance</h4>
+										<a href="https://www.du.ac.in/index.php?page=about-du">Overview</a>
+										<a href="https://www.du.ac.in/index.php?page=vision-and-mission">Vision & Mission</a>
+										<a href="https://www.du.ac.in/index.php?page=vice-chancellors-desk">VC's Desk</a>
+										<a href="https://www.du.ac.in/index.php?page=du-ranking">DU Ranking & NIRF</a>
+										<a href="https://www.du.ac.in/index.php?page=du-naac">NAAC Accreditation</a>
+									</div>
+									<div class="usf-mega-col">
+										<h4>Administration</h4>
+										<a href="https://www.du.ac.in/index.php?page=administration">University Officers</a>
+										<a href="https://www.du.ac.in/index.php?page=executive-council">Executive Council</a>
+										<a href="https://www.du.ac.in/index.php?page=academic-council">Academic Council</a>
 									</div>
 								</div>
 							</li>
 
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=academics" class="du-nav-link">Academics <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Academic Entities</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=faculties">Faculties</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=departments">Departments</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=colleges">Colleges of DU</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=centers-institutes">Centers & Institutes</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=delhi-school-of-economics">Delhi School of Economics</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Alternative & Distance Learning</h4>
-											<ul>
-												<li><a href="https://sol.du.ac.in/">Campus of Open Learning (SOL)</a></li>
-												<li><a href="https://ncweb.du.ac.in/">NCWEB (Women's Education)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=competence-enhancement-scheme">Competence Enhancement Scheme</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=virtual-learning">Virtual Learning Environment</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Faculty & Calendars</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=academic-calendar">Academic Calendar</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=international-relations">International Relations</a></li>
-												<li><a href="https://fsr.du.ac.in/">International Students (FSR)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=faculty-members">Faculty Directory</a></li>
-											</ul>
-										</div>
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=academics" class="usf-tier2-link">Academics <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown">
+									<div class="usf-mega-col">
+										<h4>Programs</h4>
+										<a href="https://admission.uod.ac.in/">Undergraduate (CSAS)</a>
+										<a href="https://admission.uod.ac.in/">Postgraduate (PG)</a>
+										<a href="https://phd.uod.ac.in/">Doctoral / Ph.D.</a>
+										<a href="https://www.du.ac.in/index.php?page=courses-syllabi">Courses & Syllabi</a>
+										<a href="https://www.du.ac.in/index.php?page=academic-calendar">Academic Calendar</a>
 									</div>
 								</div>
 							</li>
 
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=courses-syllabi" class="du-nav-link">Courses & Syllabi <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>NEP Frameworks</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=nep-ugcf-2022-syllabi">NEP: UGCF 2022 Syllabi</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=nep-pgcf-2024-syllabi">NEP: PGCF 2024 Syllabi</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=nep-guidelines">NEP 2020 Implementation</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Degree Programs</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=undergraduate-courses">Under-Graduate Courses</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=postgraduate-courses">Post-Graduate Courses</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=ph-d-programs">Doctoral (Ph.D.) Programs</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Curriculum Archives</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=revised-cbcs-syllabi">Revised CBCS Syllabi</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=executive-diploma">Diplomas & Certificate Courses</a></li>
-											</ul>
-										</div>
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://admission.uod.ac.in/" class="usf-tier2-link">Admissions & Aid <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown">
+									<div class="usf-mega-col">
+										<h4>Admissions</h4>
+										<a href="https://admission.uod.ac.in/">CSAS Portal 2026</a>
+										<a href="https://dsw.du.ac.in/">Financial Support Scheme (FSS)</a>
+										<a href="https://www.du.ac.in/index.php?page=fee-structure">Fee Structure</a>
+										<a href="https://www.du.ac.in/index.php?page=student-grievance">Grievance Redressal</a>
 									</div>
 								</div>
 							</li>
 
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=research-council" class="du-nav-link">Research <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Research Bodies</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=research-council">Research Council</a></li>
-												<li><a href="https://ioe.du.ac.in/">Institution of Eminence (IoE)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=du-dst-purse">DU-DST PURSE Grant</a></li>
-												<li><a href="https://shodhganga.inflibnet.ac.in/">Shodhganga Thesis Repository</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>IPR & Integrity</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=ipr-cell">Intellectual Property Rights (IPR)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=institutional-human-ethics-committee">Human Ethics Committee (IHEC)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=academic-integrity">Academic Integrity Policy</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=patents">Patents & MoUs</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Facilities</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=central-instrumentation">Central Instrumentation Facility (USIC)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=high-end-labs">High-end Teaching & Research Labs</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=seed-grants">University Research Grants</a></li>
-											</ul>
-										</div>
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=amenities" class="usf-tier2-link">Campus Life <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown">
+									<div class="usf-mega-col">
+										<h4>Facilities & Life</h4>
+										<a href="https://crl.du.ac.in/">Libraries & Archives</a>
+										<a href="https://dsw.du.ac.in/">Hostels & Dining</a>
+										<a href="https://www.du.ac.in/index.php?page=sports-council">Sports Council</a>
+										<a href="https://www.du.ac.in/index.php?page=campuses">North & South Campuses</a>
 									</div>
 								</div>
 							</li>
 
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://crl.du.ac.in/" class="du-nav-link">Libraries <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Major Libraries</h4>
-											<ul>
-												<li><a href="https://crl.du.ac.in/">Delhi University Library System (DULS)</a></li>
-												<li><a href="https://crl.du.ac.in/">Central Library</a></li>
-												<li><a href="https://crl.du.ac.in/">Central Science Library</a></li>
-												<li><a href="https://crl.du.ac.in/">Ratan Tata Library (DSE)</a></li>
-												<li><a href="https://crl.du.ac.in/">Law Faculty Library</a></li>
-												<li><a href="https://crl.du.ac.in/">South Campus Library</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Digital Resources</h4>
-											<ul>
-												<li><a href="https://elibrary.du.ac.in/">DU eLibrary Portal</a></li>
-												<li><a href="https://crl.du.ac.in/">E-Databases & Journals</a></li>
-												<li><a href="https://crl.du.ac.in/">DELNET & Inflibnet</a></li>
-												<li><a href="https://crl.du.ac.in/">E-Books Catalogue</a></li>
-											</ul>
-										</div>
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-tier2-link">Colleges & Depts <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown">
+									<div class="usf-mega-col">
+										<h4>Colleges & Departments</h4>
+										<a href="https://www.du.ac.in/index.php?page=colleges">DU Affiliated Colleges</a>
+										<a href="https://www.du.ac.in/index.php?page=departments">Academic Departments</a>
+										<a href="https://www.du.ac.in/index.php?page=faculties">University Faculties</a>
 									</div>
 								</div>
 							</li>
 
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=amenities" class="du-nav-link">Amenities <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Campus Welfare</h4>
-											<ul>
-												<li><a href="https://wus.du.ac.in/">W.U.S. Health Centre</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=hostels">Hostels & Housing</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=university-guest-house">University Guest Houses</a></li>
-												<li><a href="https://eoc.du.ac.in/">Equal Opportunity Cell (EOC)</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Centers & Facilities</h4>
-											<ul>
-												<li><a href="https://ducc.du.ac.in/">DU Computer Centre (DUCC)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=conference-centre">University Conference Centre</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=gandhi-bhawan">Gandhi Bhawan</a></li>
-												<li><a href="https://placement.du.ac.in/">Central Placement Cell (CPC)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=community-radio">DU Radio (90.4 MHz)</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://alumni.du.ac.in/" class="du-nav-link">Alumni <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Alumni Relations</h4>
-											<ul>
-												<li><a href="https://alumni.du.ac.in/">DU Alumni Association (DUAA)</a></li>
-												<li><a href="https://alumni.du.ac.in/">Alumni Registration</a></li>
-												<li><a href="https://alumni.du.ac.in/">Distinguished Alumni</a></li>
-												<li><a href="https://uodfoundation.du.ac.in/">UoD Foundation & Giving</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Services</h4>
-											<ul>
-												<li><a href="https://exam.du.ac.in/">Transcripts & Degree Certificates</a></li>
-												<li><a href="https://alumni.du.ac.in/">Alumni Meets & Events</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=administration" class="du-nav-link">Administration <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Executive Leadership</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=vice-chancellor">Vice Chancellor</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=director-south-campus">Director South Campus</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=dean-of-colleges">Dean of Colleges</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=registrar">Registrar</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=finance-officer">Finance Officer</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=controller-of-examination">Controller of Examination</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Officers & Deans</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=director-campus-of-open-learning">Director, COL</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=proctor">Proctor</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=public-relations-officer">Public Relations Officer</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=chief-vigilance-officer">Chief Vigilance Officer</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=deans">Deans of Faculties</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=librarian">Librarian</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Statutory Bodies</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=statutory-bodies">Statutory Bodies (Court, EC, AC)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=administrative-offices">Administrative Offices</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=committees">Committees</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=ombudsperson">Ombudsperson</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=organogram-chart">Organogram Chart</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=campuses" class="du-nav-link">Campuses <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>University Zones</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=north-campus">North Campus</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=south-campus">South Campus</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=east-campus">East Campus</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=west-campus">West Campus</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=campus-map">Campus Map & Directions</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=tenders" class="du-nav-link">Tenders <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Procurement Notices</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=tenders">Central University Tenders</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=tenders-departments">Department & Centre Tenders</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=tenders-colleges">College Tenders</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=tenders-engineering">Engineering Department Tenders</a></li>
-												<li><a href="https://eprocure.gov.in/eprocure/app">Central Public Procurement Portal (CPPP)</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=news-events" class="du-nav-link">News & Events <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Bulletins</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=press-releases">Press Releases</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=notifications">Official Notifications</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=admissions-news">Admissions News</a></li>
-											</ul>
-										</div>
-										<div class="du-drop-col">
-											<h4>Happenings</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=events">Conferences & Seminars</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=cultural-festivals">Cultural & Sports Festivals</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=media-hub">Media Gallery & Spotlights</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<!-- COLLEGES, DEPARTMENTS & IMPORTANT LINKS ALL IN THE SAME SINGLE LINE -->
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=colleges" class="du-nav-link">Colleges <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu du-right-align">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Colleges of Delhi University</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=colleges">Colleges Directory (A to Z)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=colleges-north-campus">North Campus Colleges</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=colleges-south-campus">South Campus Colleges</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=womens-colleges">Constituent Women's Colleges</a></li>
-												<li><a href="https://admission.uod.ac.in/">Colleges Admission Portal</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=departments" class="du-nav-link">Departments <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu du-right-align">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Faculties & Departments</h4>
-											<ul>
-												<li><a href="https://www.du.ac.in/index.php?page=faculty-of-arts">Faculty of Arts</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=faculty-of-science">Faculty of Science</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=faculty-of-social-sciences">Faculty of Social Sciences</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=faculty-of-commerce">Faculty of Commerce & Business Studies</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=faculty-of-law">Faculty of Law</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=faculty-of-mathematical-sciences">Faculty of Mathematical Sciences</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li class="du-nav-item du-has-dropdown">
-								<a href="https://www.du.ac.in/index.php?page=important-links" class="du-nav-link">Important Links <svg class="du-down-arrow" viewBox="0 0 24 24" width="10" height="10" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></a>
-								<div class="du-dropdown-menu du-right-align">
-									<div class="du-dropdown-cols">
-										<div class="du-drop-col">
-											<h4>Quick Portals</h4>
-											<ul>
-												<li><a href="https://samarth.edu.in/">Samarth@DU Portal</a></li>
-												<li><a href="https://exam.du.ac.in/">Examination & Results Wing</a></li>
-												<li><a href="https://admission.uod.ac.in/">DU CSAS Admission Portal</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=rti">Right to Information (RTI)</a></li>
-												<li><a href="https://www.du.ac.in/index.php?page=internal-complaints-committee">Internal Complaints Committee</a></li>
-												<li><a href="https://workwithus.du.ac.in/">Work with DU (Jobs / Vacancies)</a></li>
-											</ul>
-										</div>
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=research-council" class="usf-tier2-link">Research <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown">
+									<div class="usf-mega-col">
+										<h4>Research Hubs</h4>
+										<a href="https://ioe.du.ac.in/">Institution of Eminence (IoE)</a>
+										<a href="https://udhmodya.org/">Udhmodya Foundation</a>
+										<a href="https://www.du.ac.in/index.php?page=research-council">Research Council</a>
 									</div>
 								</div>
 							</li>
 						</ul>
-					</div>
+					</nav>
 				</div>
-			</nav>
+			</div>
+
+			<!-- Search Overlay Drawer -->
+			<div class="usf-search-drawer" id="usfSearchDrawer">
+				<div class="usf-search-box-inner">
+					<form action="https://www.du.ac.in/index.php" method="get" class="usf-search-box-form">
+						<input type="text" name="s" placeholder="Search University of Delhi..." class="usf-search-drawer-input" autofocus>
+						<button type="submit" class="usf-search-drawer-submit">Search</button>
+						<button type="button" class="usf-search-drawer-close" id="usfSearchCloseBtn" aria-label="Close search">&times;</button>
+					</form>
+				</div>
+			</div>
 		</header>
+
 
 		<!-- Mobile Navigation Drawer Overlay -->
 		<div class="menu-overlay" id="menuOverlay">
@@ -2153,6 +2496,8 @@ body.home {
 
 	
 	<!-- USF-STYLE CINEMATIC VIDEO HERO SECTION -->
+	
+	<!-- USF-STYLE CINEMATIC FULL-BLEED VIDEO HERO SECTION -->
 	<section class="usf-hero-section" id="usfHeroSection">
 		<div class="usf-hero-video-wrapper">
 			<video autoplay muted loop playsinline id="usfHeroVideo" class="usf-hero-video" preload="auto">
@@ -2163,34 +2508,27 @@ body.home {
 			<div class="usf-hero-overlay"></div>
 		</div>
 
-		<!-- Hero Content -->
-		<div class="container usf-hero-container">
-			<div class="usf-hero-content">
-				<div class="usf-hero-badge">
-					<span class="badge-dot"></span>
-					<span>UNIVERSITY OF DELHI • ESTD. 1922</span>
-				</div>
-				<h1 class="usf-hero-title">Empowering Minds, Inspiring Generations</h1>
-				<p class="usf-hero-subtitle">A premier institution of academic distinction and global research, fostering innovation, leadership, and public service for over a century.</p>
-				<div class="usf-hero-actions">
-					<a href="https://admission.uod.ac.in/" target="_blank" class="usf-btn usf-btn-primary">
-						Admissions 2026–27 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-					</a>
-					<a href="https://www.du.ac.in/index.php?page=about-du" target="_blank" class="usf-btn usf-btn-secondary">
-						Explore DU <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-					</a>
-				</div>
-			</div>
+		<!-- Center Hero Content (EXACT MATCH TO REFERENCE SCREENSHOT) -->
+		<div class="usf-hero-center-box">
+			<h1 class="usf-bold-headline">100 YEARS OF BOLD</h1>
+			<p class="usf-bold-subhead">Celebrating how far we’ve come while building a bolder future</p>
+			<a href="https://www.du.ac.in/index.php?page=about-du" target="_blank" class="usf-bold-cta">
+				Explore our story &rarr;
+			</a>
 		</div>
 
-		<!-- Scroll Down Indicator -->
-		<a href="#heroCarousel" class="usf-scroll-indicator" title="Scroll to Highlights & Notices">
-			<span class="scroll-text">EXPLORE NOTICES & HIGHLIGHTS</span>
-			<div class="scroll-mouse">
-				<div class="scroll-wheel"></div>
-			</div>
-		</a>
+		<!-- Bottom Right Circular Pause/Play Toggle Button (EXACT MATCH TO SCREENSHOT) -->
+		<button type="button" class="usf-video-toggle-btn" id="usfVideoToggleBtn" aria-label="Pause or play background video" title="Pause / Play Video">
+			<svg class="usf-icon-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+				<rect x="6" y="4" width="3.5" height="16" rx="1.2"></rect>
+				<rect x="14.5" y="4" width="3.5" height="16" rx="1.2"></rect>
+			</svg>
+			<svg class="usf-icon-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display:none; margin-left: 2px;">
+				<polygon points="6 4 20 12 6 20 6 4"></polygon>
+			</svg>
+		</button>
 	</section>
+
 
 
 	<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="hover">
@@ -5744,6 +6082,75 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 </script>
 
+
+
+<script>
+// USF Hero Video Controller (Playback Rate, Play/Pause Toggle & Header Scroll Effect)
+(function() {
+  function initUsfHero() {
+    var video = document.getElementById("usfHeroVideo");
+    var toggleBtn = document.getElementById("usfVideoToggleBtn");
+    var header = document.getElementById("usfHeader");
+    var searchBtn = document.getElementById("usfSearchOpenBtn");
+    var searchClose = document.getElementById("usfSearchCloseBtn");
+    var searchDrawer = document.getElementById("usfSearchDrawer");
+
+    if (video) {
+      video.playbackRate = 0.65; // Slow, majestic cinematic motion
+      video.addEventListener("play", function() {
+        video.playbackRate = 0.65;
+      });
+
+      if (toggleBtn) {
+        var pauseIcon = toggleBtn.querySelector(".usf-icon-pause");
+        var playIcon = toggleBtn.querySelector(".usf-icon-play");
+
+        toggleBtn.addEventListener("click", function() {
+          if (video.paused) {
+            video.play();
+            if (pauseIcon) pauseIcon.style.display = "block";
+            if (playIcon) playIcon.style.display = "none";
+          } else {
+            video.pause();
+            if (pauseIcon) pauseIcon.style.display = "none";
+            if (playIcon) playIcon.style.display = "block";
+          }
+        });
+      }
+    }
+
+    // Header Sticky on Scroll past 80px
+    if (header) {
+      window.addEventListener("scroll", function() {
+        if (window.pageYOffset > 80) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    }
+
+    // Search Drawer Toggle
+    if (searchBtn && searchDrawer) {
+      searchBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        searchDrawer.classList.toggle("open");
+      });
+    }
+    if (searchClose && searchDrawer) {
+      searchClose.addEventListener("click", function() {
+        searchDrawer.classList.remove("open");
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initUsfHero);
+  } else {
+    initUsfHero();
+  }
+})();
+</script>
 
 </body>
 
