@@ -195,38 +195,133 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 
 /* =======================================================
-   DU CAROUSEL BOTTOM PURPLE CAPTION BAR (MATCHING SCREENSHOT)
+   DU CAROUSEL BOTTOM PURPLE CAPTION BAR & FAILSAFE DISPLAY
    ======================================================= */
 .hero-carousel {
   position: relative !important;
-  overflow: hidden;
+  display: block !important;
+  width: 100% !important;
+  min-height: 460px !important;
+  background-color: #2b1127 !important;
+  overflow: hidden !important;
 }
 
+.hero-carousel .carousel-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 460px !important;
+  overflow: hidden !important;
+}
+
+.hero-carousel .carousel-item {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 460px !important;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out !important;
+}
+
+.hero-carousel .carousel-item.active {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2 !important;
+}
+
+.hero-slide__link {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.hero-slide__media {
+  display: block !important;
+  width: 100% !important;
+  position: relative !important;
+  line-height: 0 !important;
+}
+
+.hero-slide__media img {
+  display: block !important;
+  width: 100% !important;
+  height: 480px !important;
+  max-height: 560px !important;
+  min-height: 380px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* DU Carousel Navigation Arrows */
+.hero-carousel__arrow {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 50% !important;
+  background: rgba(30, 10, 28, 0.55) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 30 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  text-decoration: none !important;
+  color: #ffffff !important;
+}
+
+.hero-carousel__arrow:hover {
+  background: rgba(100, 40, 93, 0.95) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+.hero-carousel__arrow--prev {
+  left: 20px !important;
+}
+
+.hero-carousel__arrow--next {
+  right: 20px !important;
+}
+
+.hero-carousel__arrow .carousel-control-prev-icon,
+.hero-carousel__arrow .carousel-control-next-icon {
+  width: 20px !important;
+  height: 20px !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+/* DU Carousel Bottom Caption Bar (Purple) */
 .du-carousel-caption-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(94, 34, 84, 0.88);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  padding: 10px 0;
-  z-index: 25;
-  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.22);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: rgba(94, 34, 84, 0.92) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  padding: 10px 0 !important;
+  z-index: 25 !important;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.25) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
 }
 
 .du-caption-bar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 15px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 15px !important;
 }
 
 .du-caption-headline {
-  flex: 1;
-  min-width: 0;
+  flex: 1 !important;
+  min-width: 0 !important;
 }
 
 .du-caption-link {
@@ -235,97 +330,100 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   font-size: 14.5px !important;
   font-weight: 600 !important;
   text-decoration: none !important;
-  border-bottom: 1.5px dotted rgba(255, 255, 255, 0.9);
-  padding-bottom: 2px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  line-height: 1.35;
-  letter-spacing: 0.15px;
+  border-bottom: 1.5px dotted rgba(255, 255, 255, 0.9) !important;
+  padding-bottom: 2px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.2s ease !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.15px !important;
 }
 
 .du-caption-link:hover {
   color: #fce7f3 !important;
-  border-bottom-style: solid;
+  border-bottom-style: solid !important;
 }
 
 .du-caption-ext-icon {
-  flex-shrink: 0;
-  stroke: #ffffff;
+  flex-shrink: 0 !important;
+  stroke: #ffffff !important;
 }
 
 /* Dashes Carousel Indicators */
 .du-caption-indicators {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 10px !important;
 }
 
 .du-carousel-dashes {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 7px;
+  display: flex !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 7px !important;
 }
 
 .du-carousel-dashes li {
-  width: 28px;
-  height: 4px;
-  background-color: rgba(255, 255, 255, 0.45);
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border: none;
+  width: 28px !important;
+  height: 4px !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  border-radius: 2px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  border: none !important;
 }
 
 .du-carousel-dashes li.active {
-  background-color: #ffffff;
-  width: 44px;
+  background-color: #ffffff !important;
+  width: 44px !important;
 }
 
 /* Circular Info Badge (i) */
 .du-caption-info {
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
 .du-info-circle-btn {
-  width: 32px;
-  height: 32px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: 32px !important;
+  height: 32px !important;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-decoration: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.2s ease, background 0.2s ease !important;
 }
 
 .du-info-circle-btn span {
-  color: var(--du-purple);
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1;
+  color: #64285d !important;
+  font-family: 'Times New Roman', Times, serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
 }
 
 .du-info-circle-btn:hover {
-  background: #fce7f3;
-  transform: scale(1.08);
+  background: #fce7f3 !important;
+  transform: scale(1.08) !important;
 }
 
 @media only screen and (max-width: 900px) {
+  .hero-slide__media img {
+    height: 340px !important;
+  }
   .du-caption-link {
     font-size: 13px !important;
   }
   .du-carousel-dashes li {
-    width: 20px;
+    width: 20px !important;
   }
   .du-carousel-dashes li.active {
-    width: 30px;
+    width: 30px !important;
   }
 }
 
@@ -333,8 +431,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .du-caption-indicators {
     display: none !important;
   }
+  .hero-slide__media img {
+    height: 260px !important;
+  }
+  .hero-carousel, .hero-carousel .carousel-inner, .hero-carousel .carousel-item {
+    min-height: 260px !important;
+  }
 }
-
 </style>
 
 <style id="global-styles-inline-css">
@@ -391,6 +494,15 @@ body.home {
 .wrapper {
   margin-top: 0 !important;
   padding-top: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  float: none !important;
+  clear: both !important;
+}
+
+.site-main {
+  clear: both !important;
+  display: block !important;
   position: relative !important;
   width: 100% !important;
 }
@@ -4906,7 +5018,8 @@ nav.social,
 		</script>
 
 		<script>
-			var pag_id = document.getElementById("page_id_").value;
+			var pageIdEl = document.getElementById("page_id_");
+			var pag_id = pageIdEl ? pageIdEl.value : null;
 			console.log(pag_id);
 			if (pag_id == 5616) {
 				console.log(pag_id);
@@ -5297,7 +5410,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <script>
-// Dynamic DU Carousel Headline & URL Synchronization
+// Autonomous DU Carousel Controller (Failsafe Auto-Cycle & Caption Bar Sync)
 (function() {
   var duSlides = [
     {
@@ -5322,32 +5435,142 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  var heroCarousel = document.getElementById("heroCarousel");
-  if (heroCarousel) {
-    heroCarousel.addEventListener("slide.bs.carousel", function(e) {
-      var nextIdx = e.to;
-      var slideData = duSlides[nextIdx];
-      if (slideData) {
-        var captionLink = document.getElementById("duCaptionTitle");
-        if (captionLink) {
-          captionLink.href = slideData.url;
-          captionLink.innerHTML = slideData.title + ' <svg class="du-caption-ext-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>';
-        }
-      }
+  function initDUCarousel() {
+    var heroCarousel = document.getElementById("heroCarousel");
+    if (!heroCarousel) return;
 
-      // Update dashes indicators
-      var dashes = document.querySelectorAll(".du-carousel-dashes li");
-      dashes.forEach(function(dash, idx) {
-        if (idx === nextIdx) {
-          dash.classList.add("active");
+    var items = heroCarousel.querySelectorAll(".carousel-item");
+    var dashes = heroCarousel.querySelectorAll(".du-carousel-dashes li");
+    var captionLink = document.getElementById("duCaptionTitle");
+    var prevBtn = heroCarousel.querySelector(".hero-carousel__arrow--prev");
+    var nextBtn = heroCarousel.querySelector(".hero-carousel__arrow--next");
+
+    if (items.length === 0) return;
+
+    var currentIndex = 0;
+    // Find initial active index
+    items.forEach(function(item, idx) {
+      if (item.classList.contains("active")) {
+        currentIndex = idx;
+      }
+    });
+
+    var timer = null;
+    var intervalMs = 4500;
+    var isHovered = false;
+
+    function goToSlide(targetIdx) {
+      if (targetIdx < 0) targetIdx = items.length - 1;
+      if (targetIdx >= items.length) targetIdx = 0;
+
+      // Update slides
+      items.forEach(function(item, idx) {
+        if (idx === targetIdx) {
+          item.classList.add("active");
+          item.style.display = "block";
+          item.style.opacity = "1";
+          item.style.zIndex = "2";
         } else {
-          dash.classList.remove("active");
+          item.classList.remove("active");
+          item.style.display = "none";
+          item.style.opacity = "0";
+          item.style.zIndex = "1";
         }
       });
+
+      // Update dashes
+      if (dashes && dashes.length) {
+        dashes.forEach(function(dash, idx) {
+          if (idx === targetIdx) {
+            dash.classList.add("active");
+          } else {
+            dash.classList.remove("active");
+          }
+        });
+      }
+
+      // Update caption link & title
+      var slideData = duSlides[targetIdx];
+      if (captionLink && slideData) {
+        captionLink.href = slideData.url;
+        captionLink.innerHTML = slideData.title + ' <svg class="du-caption-ext-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>';
+      }
+
+      currentIndex = targetIdx;
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startTimer() {
+      stopTimer();
+      timer = setInterval(function() {
+        if (!isHovered) {
+          nextSlide();
+        }
+      }, intervalMs);
+    }
+
+    function stopTimer() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    // Bind Previous and Next buttons
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        prevSlide();
+        startTimer();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        nextSlide();
+        startTimer();
+      });
+    }
+
+    // Bind Indicator dashes
+    if (dashes && dashes.length) {
+      dashes.forEach(function(dash, idx) {
+        dash.addEventListener("click", function(e) {
+          e.preventDefault();
+          goToSlide(idx);
+          startTimer();
+        });
+      });
+    }
+
+    // Pause on hover
+    heroCarousel.addEventListener("mouseenter", function() {
+      isHovered = true;
     });
+
+    heroCarousel.addEventListener("mouseleave", function() {
+      isHovered = false;
+    });
+
+    // Ensure initial slide is styled
+    goToSlide(currentIndex);
+    startTimer();
   }
-})();
-</script>
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initDUCarousel);
+  } else {
+    initDUCarousel();
+  }
+})();</script>
 
 </body>
 
