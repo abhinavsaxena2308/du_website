@@ -1,0 +1,31 @@
+/*
+Theme Name: Twenty Sixteen
+Theme URI: https://wordpress.org/themes/twentysixteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere.
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gps-2.0.html
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Text Domain: twentysixteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+.tab_content_box_mtech h5{padding:12px}.curriculum-link{background:rgba(0,0,0,0)!important;color:#243848!important;text-decoration:underline}.single-course h2{font-size:19px!important;font-weight:500}.single-course h3{font-size:16px!important;font-weight:700}.school_menu{float:left;margin:0 auto;width:100%!important}.school-about-page-image{float:left;line-height:25px!important;padding:3px;width:29%}.school-about-page-image img{border:1px solid #00aae4;float:left;width:65%}.department-faculty-name span{text-transform:uppercase}.page-template-template-leadership .item{margin-bottom:-4px!important}.scholarships-col-section{float:left;margin-bottom:19px;margin-top:33px;padding:0;text-align:justify;width:100%}.course-detail-page li{list-style:disc outside none!important;margin-left:5px;padding-left:7px}.som2-col-section{background:none repeat scroll 0 0 #f6f4f4;border:1px solid #ccc;border-radius:5px;float:left;margin-bottom:19px;margin-top:33px;padding:15px;text-align:justify;width:100%}.refund-policy{margin-top:22px}.refund-policy ul li{color:#3e3e3e;float:left;list-style:lower-alpha outside none;margin-left:30px;padding-left:3px;text-align:left;width:100%}.refund-policy li ul li{list-style:lower-roman outside none}.placement-cell{margin:0 auto;text-align:left;width:315px}.placement-cell>p{font-size:20px!important}.model-date{background:rgba(0,0,0,0) url(https://www.bennett.edu.in/wp-content/uploads/2018/06/cal-date.png) no-repeat scroll 1px 1px!important}.sports-facilities{color:#3e3e3e;line-height:30px;text-align:left}.sports-facilities>li{list-style:decimal outside none;margin-left:26px}.top_ft_links .social_links ul{padding-left:0}.top_ft_links .social_links ul li{width:100%;float:left;margin-bottom:1px;min-height:auto}.top_ft_links .social_links ul li a{color:#aacbe5;font-size:12px}.top_ft_links .social_links ul li a:hover{color:#fff;padding-left:4px}.top_ft_links .social_links ul li a .fa{width:23px;height:23px;display:inline-block;border-radius:100%;color:#003a68;background:#fff;line-height:24px;text-align:center;font-size:12px}.placement-news>li{border-bottom:1px dotted;line-height:20px;list-style:disc inside none!important;margin-top:9px;padding-bottom:12px}@keyframes mblinker{50%{opacity:0}}@media screen and (max-width:767px){.md-info{height:168px;padding:0 10px 0 14px!important;top:0;width:100%;background:0 0!important;overflow-x:scroll}}
+
+/* page-id-61261 for national-anti-ragging-helpline/ */
+
+ 
+ 
+.anti-raging h1 {  font-size: 32px;  font-weight: 600;  text-transform: uppercase;}
+.anti-raging h2 {  font-size: 25px;  font-weight: 500;  text-transform: uppercase;}
+.anti-raging h3 {  font-size: 22px !important;  font-weight: 500;  text-transform: uppercase;color: #000 !important;}
+ 
+
+@media only screen and (max-width: 767px) {
+    .anti-raging h1 {    font-size: 26px;    }
+    .anti-raging h2 { font-size: 20px !important;}
+    .anti-raging h3 { font-size: 18px !important;}
+  }
