@@ -438,6 +438,33 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     min-height: 260px !important;
   }
 }
+
+/* Mobile Hamburger Button */
+.usf-mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.usf-mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+@media only screen and (max-width: 860px) {
+  .usf-mobile-menu-btn {
+    display: flex;
+  }
+}
+
 </style>
 
 <style id="global-styles-inline-css">
@@ -2349,6 +2376,14 @@ body.home {
 						</a>
 
 						<!-- Apply CTA Button (Exact Reference Pill) -->
+						
+						<!-- Mobile Menu Toggle Button -->
+						<button type="button" class="usf-mobile-menu-btn" id="usfMobileMenuBtn" aria-label="Open mobile menu">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						
 						<a href="https://admission.uod.ac.in/" target="_blank" class="usf-apply-btn">
 							<span>Apply</span> <span class="usf-apply-arrow">&rsaquo;</span>
 						</a>
@@ -6084,73 +6119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<script>
-// USF Hero Video Controller (Playback Rate, Play/Pause Toggle & Header Scroll Effect)
-(function() {
-  function initUsfHero() {
-    var video = document.getElementById("usfHeroVideo");
-    var toggleBtn = document.getElementById("usfVideoToggleBtn");
-    var header = document.getElementById("usfHeader");
-    var searchBtn = document.getElementById("usfSearchOpenBtn");
-    var searchClose = document.getElementById("usfSearchCloseBtn");
-    var searchDrawer = document.getElementById("usfSearchDrawer");
 
-    if (video) {
-      video.playbackRate = 0.65; // Slow, majestic cinematic motion
-      video.addEventListener("play", function() {
-        video.playbackRate = 0.65;
-      });
-
-      if (toggleBtn) {
-        var pauseIcon = toggleBtn.querySelector(".usf-icon-pause");
-        var playIcon = toggleBtn.querySelector(".usf-icon-play");
-
-        toggleBtn.addEventListener("click", function() {
-          if (video.paused) {
-            video.play();
-            if (pauseIcon) pauseIcon.style.display = "block";
-            if (playIcon) playIcon.style.display = "none";
-          } else {
-            video.pause();
-            if (pauseIcon) pauseIcon.style.display = "none";
-            if (playIcon) playIcon.style.display = "block";
-          }
-        });
-      }
-    }
-
-    // Header Sticky on Scroll past 80px
-    if (header) {
-      window.addEventListener("scroll", function() {
-        if (window.pageYOffset > 80) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
-    }
-
-    // Search Drawer Toggle
-    if (searchBtn && searchDrawer) {
-      searchBtn.addEventListener("click", function(e) {
-        e.preventDefault();
-        searchDrawer.classList.toggle("open");
-      });
-    }
-    if (searchClose && searchDrawer) {
-      searchClose.addEventListener("click", function() {
-        searchDrawer.classList.remove("open");
-      });
-    }
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initUsfHero);
-  } else {
-    initUsfHero();
-  }
-})();
-</script>
 
 </body>
 
