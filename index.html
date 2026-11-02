@@ -1743,6 +1743,87 @@ body.home {
   }
 }
 
+
+
+/* =======================================================
+   CRITICAL DISPLAY FIXES: ZERO GAPS, HIDE OVERLAYS & POPUPS
+   ======================================================= */
+/* STRICTLY HIDE MOBILE DRAWER UNLESS ACTIVE */
+.menu-overlay, 
+#menuOverlay {
+  display: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  z-index: 9999999 !important;
+}
+
+.menu-overlay.active, 
+#menuOverlay.active {
+  display: block !important;
+}
+
+.menu-container {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 320px !important;
+  max-width: 85vw !important;
+  height: 100% !important;
+  background: #ffffff !important;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3) !important;
+  z-index: 10000000 !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+}
+
+/* HIDE STRAY BENNETT FLOATING BUTTONS & SIDEBARS */
+.mobile-sticky-cta, 
+.sticky1, 
+.enquire-now,
+.sticky-right-btn, 
+.stickyform2, 
+.socialtwitter, 
+nav.social, 
+.sticky-whtp, 
+.default-chatbot-indicator,
+.chat-widget,
+.apply-ctabtn-wrap,
+a[data-bs-target="#bennettBrochure"],
+.modal-backdrop,
+.scroll-hide,
+.wpcf7-response-output {
+  display: none !important;
+}
+
+/* ZERO GAP FULL BLEED HERO SETUP */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+.wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  float: none !important;
+  clear: both !important;
+}
+
+.site-main {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  display: block !important;
+  clear: both !important;
+}
+
 </style>
 </head>
 <style>
