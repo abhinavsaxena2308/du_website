@@ -2651,6 +2651,115 @@ header.usf-exact-header.scrolled,
 }
 
 </style>
+<style id="du-clean-spacing-styles">
+/* =======================================================
+   CLEAN SECTION GAPPING & CAROUSEL HEADING STYLING
+   ======================================================= */
+/* Heading Before Carousel */
+.du-carousel-header-section {
+  padding: 50px 20px 24px 20px !important;
+  background: #ffffff !important;
+  text-align: center !important;
+}
+
+.du-section-eyebrow {
+  margin-bottom: 10px !important;
+}
+
+.eyebrow-badge {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.6px !important;
+  color: rgb(101, 43, 124) !important;
+  text-transform: uppercase !important;
+  background: rgba(101, 43, 124, 0.08) !important;
+  border: 1px solid rgba(101, 43, 124, 0.2) !important;
+  padding: 5px 16px !important;
+  border-radius: 30px !important;
+  display: inline-block !important;
+}
+
+.du-carousel-main-heading {
+  font-family: 'Montserrat', 'Oswald', sans-serif !important;
+  font-size: clamp(28px, 3.4vw, 40px) !important;
+  font-weight: 800 !important;
+  color: #1f2937 !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.25 !important;
+}
+
+.du-carousel-sub-heading {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: clamp(14px, 1.3vw, 16.5px) !important;
+  font-weight: 500 !important;
+  color: #6b7280 !important;
+  max-width: 680px !important;
+  margin: 0 auto 18px auto !important;
+  line-height: 1.55 !important;
+}
+
+.du-heading-divider {
+  width: 54px !important;
+  height: 3.5px !important;
+  background: rgb(101, 43, 124) !important;
+  border-radius: 4px !important;
+  margin: 0 auto !important;
+}
+
+/* Carousel Gapping */
+#heroCarousel {
+  margin-top: 10px !important;
+  margin-bottom: 55px !important;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* Marquee Spacing */
+.du-hero-marquee-section {
+  margin-bottom: 10px !important;
+}
+
+/* Clean Spacing Between All Sections Throughout the Page */
+.site-main section.py-5,
+.site-main section.offset-t-b,
+.site-main section.bu-ach-section,
+.site-main section.section-app-component,
+.site-main section.academic-app-component,
+.site-main section.gallery-app-component,
+.site-main section.companies-app-component,
+.site-main section.Testimonials-app-component,
+.site-main section.blogs-section-component,
+.site-main section.times-legacy-section,
+.site-main section.power-brands-section {
+  margin-top: 35px !important;
+  margin-bottom: 35px !important;
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+  position: relative !important;
+}
+
+/* Subtle separator line between major sections for a clean, organized look */
+.site-main section.offset-t-b::after,
+.site-main section.py-5:not(.welcom_)::after {
+  content: '' !important;
+  display: block !important;
+  width: 85% !important;
+  max-width: 1200px !important;
+  height: 1px !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  margin: 40px auto 0 auto !important;
+}
+
+/* Extra breathing room on section headers */
+.site-main .text-primary-custom,
+.site-main ._app-component-heading,
+.site-main h2.text-primary-custom,
+.site-main .welcom_ h2 {
+  margin-bottom: 16px !important;
+  letter-spacing: -0.3px !important;
+}
+</style>
 </head>
 <style>
 	.honeypot {
@@ -4032,6 +4141,19 @@ header.usf-exact-header.scrolled,
 
 
 
+
+	
+	<!-- FEATURED CAMPUS HIGHLIGHTS HEADING (BEFORE CAROUSEL) -->
+	<section class="du-carousel-header-section" aria-label="Campus Highlights">
+		<div class="container text-center">
+			<div class="du-section-eyebrow">
+				<span class="eyebrow-badge">UNIVERSITY SPOTLIGHT</span>
+			</div>
+			<h2 class="du-carousel-main-heading">Featured Highlights & Announcements</h2>
+			<p class="du-carousel-sub-heading">Explore recent milestones, academic conferences, events, and key notices across the University of Delhi.</p>
+			<div class="du-heading-divider"></div>
+		</div>
+	</section>
 
 	<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="hover">
 		<div class="carousel-inner">
