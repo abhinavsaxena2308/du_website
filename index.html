@@ -655,6 +655,115 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   }
 }
 
+
+
+/* =======================================================
+   USF REFERENCE MULTI-DROPDOWN EXPANDED STYLING
+   ======================================================= */
+.usf-card-wide {
+  width: 880px !important;
+  max-width: 92vw !important;
+  padding: 28px 34px !important;
+}
+
+.usf-grid-3col {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  column-gap: 32px !important;
+  row-gap: 0 !important;
+}
+
+.usf-col-header {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  color: #7b2a6e !important;
+  margin: 0 0 10px 0 !important;
+  padding-bottom: 6px !important;
+  border-bottom: 2px solid #f2e4f0 !important;
+}
+
+.usf-dropdown-col {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.usf-tier2-list {
+  gap: 20px !important;
+}
+
+.usf-tier2-link {
+  font-size: 14.5px !important;
+}
+
+
+
+/* Hover Bridge for Dropdown & Popover (Prevents Flicker on Mouse Move) */
+.usf-mega-dropdown::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -16px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 16px !important;
+  background: transparent !important;
+}
+
+.usf-popover-menu::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -12px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+}
+
+/* Ensure smooth pointer alignment and crisp card borders */
+.usf-drop-left::before {
+  left: 44px !important;
+}
+
+.usf-drop-right::before {
+  right: 48px !important;
+  left: auto !important;
+}
+
+.usf-drop-center::before {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Refined Link Row in Dropdown */
+.usf-dropdown-link-item {
+  position: relative !important;
+  padding: 11px 4px !important;
+  border-bottom: 1px solid #ebdbe8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-decoration: none !important;
+  color: #2d3748 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  transition: all 0.18s ease-in-out !important;
+}
+
+.usf-dropdown-link-item:hover {
+  background: rgba(92, 24, 82, 0.035) !important;
+  padding-left: 8px !important;
+  color: #5c1852 !important;
+}
+
+.usf-dropdown-link-item:hover .usf-item-arrow {
+  color: #c99200 !important;
+  transform: translateX(3px) !important;
+}
+
 </style>
 
 <style id="global-styles-inline-css">
@@ -2650,58 +2759,92 @@ html, body {
 
 					<!-- Tier 2: Main Navigation Links (Accommodating ALL 15 DU Menu Items) -->
 					<!-- Tier 2: Main Navigation Links with Reference Mega-Dropdown Cards -->
+					<!-- Tier 2: Comprehensive DU Mega-Dropdown Navigation (Extracted from du.ac.in) -->
 					<nav class="usf-tier2-nav">
 						<ul class="usf-tier2-list">
-							<!-- 1. About DU -->
+							<!-- 1. ABOUT DU -->
 							<li class="usf-menu-item usf-has-sub">
 								<a href="https://www.du.ac.in/index.php?page=about-du" class="usf-tier2-link">About DU <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
-								<div class="usf-mega-dropdown usf-drop-left">
+								<div class="usf-mega-dropdown usf-drop-left usf-card-wide">
 									<div class="usf-dropdown-title-row">
 										<h3 class="usf-dropdown-main-title">ABOUT DU</h3>
 										<div class="usf-dropdown-hatch-pattern"></div>
 									</div>
-									<div class="usf-dropdown-grid">
+									<div class="usf-dropdown-grid usf-grid-3col">
 										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">University Profile</h4>
 											<a href="https://www.du.ac.in/index.php?page=about-du" class="usf-dropdown-link-item">
 												<span class="usf-item-title">Overview</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 											<a href="https://www.du.ac.in/index.php?page=vision-and-mission" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Vision and Mission</span>
+												<span class="usf-item-title">Vision & Mission</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=about-du" class="usf-dropdown-link-item">
-												<span class="usf-item-title">History and Heritage</span>
+											<a href="https://www.du.ac.in/index.php?page=vice-chancellors-desk" class="usf-dropdown-link-item">
+												<span class="usf-item-title">VC's Desk & Messages</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 											<a href="https://www.du.ac.in/index.php?page=du-ranking" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Facts and Statistics</span>
+												<span class="usf-item-title">DU Ranking & NIRF</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=campuses" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Campuses and Locations</span>
+											<a href="https://www.du.ac.in/index.php?page=du-naac" class="usf-dropdown-link-item">
+												<span class="usf-item-title">NAAC Accreditation</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=social-outreach" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Social Outreach</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 										</div>
 										<div class="usf-dropdown-col">
-											<a href="https://www.du.ac.in/index.php?page=vice-chancellors-desk" class="usf-dropdown-link-item">
-												<span class="usf-item-title">VC's Desk and Messages</span>
+											<h4 class="usf-col-header">Governance & Planning</h4>
+											<a href="https://www.du.ac.in/index.php?page=acts-statutes-ordinances" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Acts & Statutes</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=administration" class="usf-dropdown-link-item">
-												<span class="usf-item-title">University Leadership</span>
+											<a href="https://www.du.ac.in/index.php?page=institutional-development-plan" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Institutional Plan (IDP)</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=du-naac" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Accreditation (NAAC)</span>
+											<a href="https://www.du.ac.in/index.php?page=strategic-plan-2024-2047" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Strategic Plan 2024–47</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://workwithus.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Work at DU (Jobs)</span>
+											<a href="https://www.du.ac.in/index.php?page=annual-reports" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Annual Reports</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=social-outreach" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Visit DU and Outreach</span>
+											<a href="https://www.du.ac.in/index.php?page=university-calendar" class="usf-dropdown-link-item">
+												<span class="usf-item-title">University Calendar</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=best-practices" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Best Practices</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Heritage & Media</h4>
+											<a href="https://www.du.ac.in/index.php?page=du-e-journals" class="usf-dropdown-link-item">
+												<span class="usf-item-title">DU e-Journals</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=university-handbooks" class="usf-dropdown-link-item">
+												<span class="usf-item-title">University Handbooks</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=du-gallery" class="usf-dropdown-link-item">
+												<span class="usf-item-title">DU Photo Gallery</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=du-memoir" class="usf-dropdown-link-item">
+												<span class="usf-item-title">DU Memoir</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=du-archives" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Archives & Centenary</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 										</div>
@@ -2709,195 +2852,73 @@ html, body {
 								</div>
 							</li>
 
-							<!-- 2. Academics -->
+							<!-- 2. ACADEMICS -->
 							<li class="usf-menu-item usf-has-sub">
 								<a href="https://www.du.ac.in/index.php?page=academics" class="usf-tier2-link">Academics <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
-								<div class="usf-mega-dropdown usf-drop-left">
+								<div class="usf-mega-dropdown usf-drop-left usf-card-wide">
 									<div class="usf-dropdown-title-row">
 										<h3 class="usf-dropdown-main-title">ACADEMICS</h3>
 										<div class="usf-dropdown-hatch-pattern"></div>
 									</div>
-									<div class="usf-dropdown-grid">
+									<div class="usf-dropdown-grid usf-grid-3col">
 										<div class="usf-dropdown-col">
-											<a href="https://admission.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Undergraduate Programs</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://admission.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Postgraduate Admissions</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://phd.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Doctoral & Ph.D. Programs</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=courses-syllabi" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Courses and Syllabi</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-										</div>
-										<div class="usf-dropdown-col">
-											<a href="https://www.du.ac.in/index.php?page=academic-calendar" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Academic Calendar</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://exam.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Examinations and Results</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=departments" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Faculties and Departments</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://exam.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Convocation and Degrees</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<!-- 3. Admissions & Aid -->
-							<li class="usf-menu-item usf-has-sub">
-								<a href="https://admission.uod.ac.in/" class="usf-tier2-link">Admissions & Aid <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
-								<div class="usf-mega-dropdown usf-drop-center">
-									<div class="usf-dropdown-title-row">
-										<h3 class="usf-dropdown-main-title">ADMISSIONS & AID</h3>
-										<div class="usf-dropdown-hatch-pattern"></div>
-									</div>
-									<div class="usf-dropdown-grid">
-										<div class="usf-dropdown-col">
-											<a href="https://admission.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">CSAS Admission Portal 2026</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://admission.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Undergraduate Admissions</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://admission.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Postgraduate Admissions</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://phd.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Ph.D. Application Portal</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-										</div>
-										<div class="usf-dropdown-col">
-											<a href="https://dsw.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Financial Support Scheme (FSS)</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=fee-structure" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Fee Structure 2026-27</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=student-grievance" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Student Grievance Redressal</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://admission.uod.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Admissions Helpdesk & FAQs</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<!-- 4. Campus Life -->
-							<li class="usf-menu-item usf-has-sub">
-								<a href="https://www.du.ac.in/index.php?page=amenities" class="usf-tier2-link">Campus Life <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
-								<div class="usf-mega-dropdown usf-drop-center">
-									<div class="usf-dropdown-title-row">
-										<h3 class="usf-dropdown-main-title">CAMPUS LIFE</h3>
-										<div class="usf-dropdown-hatch-pattern"></div>
-									</div>
-									<div class="usf-dropdown-grid">
-										<div class="usf-dropdown-col">
-											<a href="https://crl.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Central Library (CRL) & Archives</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://dsw.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Hostels & Dining Services</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=amenities" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Student Health & Amenities</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=sports-council" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Delhi University Sports Council</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-										</div>
-										<div class="usf-dropdown-col">
-											<a href="https://www.du.ac.in/index.php?page=campuses" class="usf-dropdown-link-item">
-												<span class="usf-item-title">North & South Campuses</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=social-outreach" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Cultural Societies & Fests</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://dsw.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Equal Opportunity Cell (EOC)</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">National Service Scheme (NSS)</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<!-- 5. Colleges & Depts -->
-							<li class="usf-menu-item usf-has-sub">
-								<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-tier2-link">Colleges & Depts <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
-								<div class="usf-mega-dropdown usf-drop-right">
-									<div class="usf-dropdown-title-row">
-										<h3 class="usf-dropdown-main-title">COLLEGES & DEPTS</h3>
-										<div class="usf-dropdown-hatch-pattern"></div>
-									</div>
-									<div class="usf-dropdown-grid">
-										<div class="usf-dropdown-col">
-											<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Affiliated Colleges Directory</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-dropdown-link-item">
-												<span class="usf-item-title">North Campus Colleges</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-dropdown-link-item">
-												<span class="usf-item-title">South Campus Colleges</span>
+											<h4 class="usf-col-header">Academic Entities</h4>
+											<a href="https://www.du.ac.in/index.php?page=faculties" class="usf-dropdown-link-item">
+												<span class="usf-item-title">University Faculties</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 											<a href="https://www.du.ac.in/index.php?page=departments" class="usf-dropdown-link-item">
 												<span class="usf-item-title">Academic Departments</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
+											<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Affiliated Colleges</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=centers-institutes" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Centers & Institutes</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=delhi-school-of-economics" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Delhi School of Economics</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
 										</div>
 										<div class="usf-dropdown-col">
-											<a href="https://www.du.ac.in/index.php?page=faculties" class="usf-dropdown-link-item">
-												<span class="usf-item-title">University Faculties</span>
+											<h4 class="usf-col-header">Distance Learning</h4>
+											<a href="https://sol.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">School of Open Learning (SOL)</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=research-council" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Recognized Research Centers</span>
+											<a href="https://ncweb.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">NCWEB (Women's Board)</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://alumni.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">DU Alumni Association</span>
+											<a href="https://www.du.ac.in/index.php?page=competence-enhancement-scheme" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Competence Scheme (CES)</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-dropdown-link-item">
-												<span class="usf-item-title">College Principal Forum</span>
+											<a href="https://www.du.ac.in/index.php?page=virtual-learning" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Virtual Learning (VLE)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Calendar & Global</h4>
+											<a href="https://www.du.ac.in/index.php?page=academic-calendar" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Academic Calendar</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=international-relations" class="usf-dropdown-link-item">
+												<span class="usf-item-title">International Relations</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://fsr.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Foreign Students (FSR)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=faculty-members" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Faculty Directory</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 										</div>
@@ -2905,48 +2926,419 @@ html, body {
 								</div>
 							</li>
 
-							<!-- 6. Research -->
+							<!-- 3. COURSES & SYLLABI -->
 							<li class="usf-menu-item usf-has-sub">
-								<a href="https://www.du.ac.in/index.php?page=research-council" class="usf-tier2-link">Research <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
-								<div class="usf-mega-dropdown usf-drop-right">
+								<a href="https://www.du.ac.in/index.php?page=courses-syllabi" class="usf-tier2-link">Courses & Syllabi <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown usf-drop-center usf-card-wide">
 									<div class="usf-dropdown-title-row">
-										<h3 class="usf-dropdown-main-title">RESEARCH & IOE</h3>
+										<h3 class="usf-dropdown-main-title">COURSES & SYLLABI</h3>
 										<div class="usf-dropdown-hatch-pattern"></div>
 									</div>
-									<div class="usf-dropdown-grid">
+									<div class="usf-dropdown-grid usf-grid-3col">
 										<div class="usf-dropdown-col">
-											<a href="https://ioe.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Institution of Eminence (IoE)</span>
+											<h4 class="usf-col-header">NEP Frameworks</h4>
+											<a href="https://www.du.ac.in/index.php?page=nep-ugcf-2022-syllabi" class="usf-dropdown-link-item">
+												<span class="usf-item-title">NEP: UGCF 2022 Syllabi</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://udhmodya.org/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Udhmodya Foundation (Startups)</span>
+											<a href="https://www.du.ac.in/index.php?page=nep-pgcf-2024-syllabi" class="usf-dropdown-link-item">
+												<span class="usf-item-title">NEP: PGCF 2024 Syllabi</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=research-council" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Research Council Projects</span>
-												<span class="usf-item-arrow">&raquo;</span>
-											</a>
-											<a href="https://www.du.ac.in/index.php?page=tenders" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Tenders & Research Grants</span>
+											<a href="https://www.du.ac.in/index.php?page=nep-guidelines" class="usf-dropdown-link-item">
+												<span class="usf-item-title">NEP 2020 Guidelines</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 										</div>
 										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Degree Programs</h4>
+											<a href="https://www.du.ac.in/index.php?page=undergraduate-courses" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Undergraduate Courses</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=postgraduate-courses" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Postgraduate Courses</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=ph-d-programs" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Doctoral (Ph.D.) Programs</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Curriculum Archives</h4>
+											<a href="https://www.du.ac.in/index.php?page=revised-cbcs-syllabi" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Revised CBCS Syllabi</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=executive-diploma" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Diplomas & Certificates</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://exam.du.ac.in/" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Exam Scheme & Patterns</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- 4. ADMISSIONS & AID -->
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://admission.uod.ac.in/" class="usf-tier2-link">Admissions & Aid <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown usf-drop-center usf-card-wide">
+									<div class="usf-dropdown-title-row">
+										<h3 class="usf-dropdown-main-title">ADMISSIONS & AID</h3>
+										<div class="usf-dropdown-hatch-pattern"></div>
+									</div>
+									<div class="usf-dropdown-grid usf-grid-3col">
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Admissions 2026</h4>
+											<a href="https://admission.uod.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">CSAS (UG) Admission Portal</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://admission.uod.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">CSAS (PG) Admission Portal</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://phd.uod.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Ph.D. Registration Portal</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://admission.uod.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Information Bulletins</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Financial Support</h4>
+											<a href="https://dsw.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Financial Support Scheme (FSS)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=fee-structure" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Fee Structure AY 2026-27</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://dsw.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Scholarships & Fellowships</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://uodfoundation.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Student Aid Funds</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Support & Helpdesk</h4>
+											<a href="https://www.du.ac.in/index.php?page=student-grievance" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Grievance Redressal Cell</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://admission.uod.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Admissions FAQs</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://admission.uod.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Chatbot & Helpdesk</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://dsw.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Dean Students' Welfare</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- 5. RESEARCH & IOE -->
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=research-council" class="usf-tier2-link">Research <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown usf-drop-center usf-card-wide">
+									<div class="usf-dropdown-title-row">
+										<h3 class="usf-dropdown-main-title">RESEARCH & INNOVATION</h3>
+										<div class="usf-dropdown-hatch-pattern"></div>
+									</div>
+									<div class="usf-dropdown-grid usf-grid-3col">
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Research Bodies</h4>
+											<a href="https://ioe.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Institution of Eminence (IoE)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
 											<a href="https://www.du.ac.in/index.php?page=research-council" class="usf-dropdown-link-item">
-												<span class="usf-item-title">Patents & Tech Transfers</span>
+												<span class="usf-item-title">Research Council</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://uodfoundation.du.ac.in/" class="usf-dropdown-link-item">
-												<span class="usf-item-title">UoD Foundation Projects</span>
+											<a href="https://www.du.ac.in/index.php?page=du-dst-purse" class="usf-dropdown-link-item">
+												<span class="usf-item-title">DU-DST PURSE Grant</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=news-events" class="usf-dropdown-link-item">
-												<span class="usf-item-title">News & Research Highlights</span>
+											<a href="https://shodhganga.inflibnet.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Shodhganga Repository</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
-											<a href="https://www.du.ac.in/index.php?page=kulgeet" class="usf-dropdown-link-item">
-												<span class="usf-item-title">डीयू कुलगीत</span>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">IPR & Innovation</h4>
+											<a href="https://udhmodya.org/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Udhmodya Foundation</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=ipr-cell" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Intellectual Property (IPR)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=patents" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Patents & MoUs</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=academic-integrity" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Academic Integrity Policy</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Central Facilities</h4>
+											<a href="https://www.du.ac.in/index.php?page=central-instrumentation" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Instrumentation Facility (USIC)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=high-end-labs" class="usf-dropdown-link-item">
+												<span class="usf-item-title">High-End Research Labs</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=seed-grants" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Faculty Seed Grants</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=institutional-human-ethics-committee" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Human Ethics (IHEC)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- 6. COLLEGES & DEPTS -->
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-tier2-link">Colleges & Depts <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown usf-drop-right usf-card-wide">
+									<div class="usf-dropdown-title-row">
+										<h3 class="usf-dropdown-main-title">COLLEGES & DEPTS</h3>
+										<div class="usf-dropdown-hatch-pattern"></div>
+									</div>
+									<div class="usf-dropdown-grid usf-grid-3col">
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Colleges</h4>
+											<a href="https://www.du.ac.in/index.php?page=colleges" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Colleges Directory (A-Z)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=colleges-north-campus" class="usf-dropdown-link-item">
+												<span class="usf-item-title">North Campus Colleges</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=colleges-south-campus" class="usf-dropdown-link-item">
+												<span class="usf-item-title">South Campus Colleges</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=womens-colleges" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Women's Colleges</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Faculties</h4>
+											<a href="https://www.du.ac.in/index.php?page=faculty-of-arts" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Faculty of Arts</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=faculty-of-science" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Faculty of Science</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=faculty-of-social-sciences" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Social Sciences</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=faculty-of-law" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Faculty of Law</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Departments & Alumni</h4>
+											<a href="https://www.du.ac.in/index.php?page=faculty-of-commerce" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Commerce & Business</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=faculty-of-mathematical-sciences" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Mathematical Sciences</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://alumni.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">DU Alumni Association</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://uodfoundation.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">UoD Foundation</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- 7. ADMINISTRATION -->
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=administration" class="usf-tier2-link">Administration <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown usf-drop-right usf-card-wide">
+									<div class="usf-dropdown-title-row">
+										<h3 class="usf-dropdown-main-title">ADMINISTRATION</h3>
+										<div class="usf-dropdown-hatch-pattern"></div>
+									</div>
+									<div class="usf-dropdown-grid usf-grid-3col">
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Executive Leadership</h4>
+											<a href="https://www.du.ac.in/index.php?page=vice-chancellor" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Vice Chancellor</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=director-south-campus" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Director South Campus</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=dean-of-colleges" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Dean of Colleges</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=registrar" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Registrar</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=finance-officer" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Finance Officer</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Key Officers & Deans</h4>
+											<a href="https://www.du.ac.in/index.php?page=controller-of-examination" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Controller of Examination</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=proctor" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Proctor's Office</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=deans" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Deans of Faculties</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=librarian" class="usf-dropdown-link-item">
+												<span class="usf-item-title">University Librarian</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=public-relations-officer" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Public Relations (PRO)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Statutory Bodies</h4>
+											<a href="https://www.du.ac.in/index.php?page=statutory-bodies" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Executive & Academic Councils</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=administrative-offices" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Administrative Offices</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=ombudsperson" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Ombudsperson</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=internal-complaints-committee" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Internal Complaints (ICC)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=rti" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Right to Information (RTI)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- 8. CAMPUS & AMENITIES -->
+							<li class="usf-menu-item usf-has-sub">
+								<a href="https://www.du.ac.in/index.php?page=amenities" class="usf-tier2-link">Campus Life <svg class="usf-caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></a>
+								<div class="usf-mega-dropdown usf-drop-right usf-card-wide">
+									<div class="usf-dropdown-title-row">
+										<h3 class="usf-dropdown-main-title">CAMPUS & AMENITIES</h3>
+										<div class="usf-dropdown-hatch-pattern"></div>
+									</div>
+									<div class="usf-dropdown-grid usf-grid-3col">
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Libraries</h4>
+											<a href="https://crl.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Delhi University Library (DULS)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://crl.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Central Science Library</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://crl.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Ratan Tata Library (DSE)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://crl.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Digital Library & E-Journals</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Student Facilities</h4>
+											<a href="https://dsw.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Hostels & Dining</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=amenities" class="usf-dropdown-link-item">
+												<span class="usf-item-title">WUS Health Centre</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=sports-council" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Sports Council & Complexes</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://dsw.du.ac.in/" target="_blank" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Equal Opportunity (EOC)</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+										</div>
+										<div class="usf-dropdown-col">
+											<h4 class="usf-col-header">Campuses & Notices</h4>
+											<a href="https://www.du.ac.in/index.php?page=campuses" class="usf-dropdown-link-item">
+												<span class="usf-item-title">North & South Campuses</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=campus-map" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Campus Maps & Directions</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=tenders" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Tenders & Procurements</span>
+												<span class="usf-item-arrow">&raquo;</span>
+											</a>
+											<a href="https://www.du.ac.in/index.php?page=notifications" class="usf-dropdown-link-item">
+												<span class="usf-item-title">Press & Notifications</span>
 												<span class="usf-item-arrow">&raquo;</span>
 											</a>
 										</div>
@@ -3015,7 +3407,7 @@ html, body {
 	<section class="usf-hero-section" id="usfHeroSection">
 		<div class="usf-hero-video-wrapper">
 			<video autoplay muted loop playsinline id="usfHeroVideo" class="usf-hero-video" preload="auto">
-				<source src="assets/hero-video.mp4" type="video/mp4">
+				<source src="assets/hero-video.webm" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
 			<!-- USF-Style Signature Gradient Tint Overlay -->
